@@ -1,22 +1,18 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 {% load staticfiles %}
 	<head>
-		<title>Bookflood</title>
+		<title>Books</title>
 		  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		  <link rel="stylesheet" href="{% static 'css/bookflood.css' %}">
 	</head>
 	<body>
 		<div>
-			<h1><a href="">Welcome to Bookflood!</a></h1>
+			<h3><a href="{% url 'home' %}">Home</a></h3>
+			<h3><a href="{% url 'books' %}">All Books</a></h3>	
 		</div>
-			<h3><a href="{% url 'books' %}">Books</a></h3>	
-			<h3><a href="{% url 'person' %}">User Profiles</a></h3>	
-		{% for p in people %}
-			<div>
-				{{ p }}
-			</div>
-		{% endfor %}
+		{% block content %} 
+		{% endblock %}
 	</body>
 </html>
